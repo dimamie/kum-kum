@@ -1,25 +1,8 @@
 :root {
   --bg: #ffffff;
-  --bg-soft: #f8f8fb;
   --text: #111114;
   --muted: #555560;
-  --primary: #5b55ff;
-  --primary-contrast: #ffffff;
   --border: #e8e8ef;
-  --card: #ffffff;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg: #ffffff;
-    --bg-soft: #f8f8fb;
-    --text: #111114;
-    --muted: #555560;
-    --primary: #5b55ff;
-    --primary-contrast: #ffffff;
-    --border: #e8e8ef;
-    --card: #ffffff;
-  }
 }
 
 * { box-sizing: border-box; }
@@ -123,8 +106,6 @@ img, svg { display: block; max-width: 100%; }
 }
 
 
-/* Work removed */
-
 /* About */
 .about { padding: 2.5rem 0; }
 .about-intro {
@@ -158,8 +139,4 @@ img, svg { display: block; max-width: 100%; }
 }
 
 
-/* Contact removed */
 
-/* Footer removed */
-
-/* Buttons and links removed */
