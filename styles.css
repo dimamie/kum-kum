@@ -1,0 +1,161 @@
+:root {
+  --bg: #ffffff;
+  --bg-soft: #f8f8fb;
+  --text: #111114;
+  --muted: #555560;
+  --primary: #5b55ff;
+  --primary-contrast: #ffffff;
+  --border: #e8e8ef;
+  --card: #ffffff;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg: #ffffff;
+    --bg-soft: #f8f8fb;
+    --text: #111114;
+    --muted: #555560;
+    --primary: #5b55ff;
+    --primary-contrast: #ffffff;
+    --border: #e8e8ef;
+    --card: #ffffff;
+  }
+}
+
+* { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Helvetica Neue", Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, svg { display: block; max-width: 100%; }
+
+.container {
+  width: 70vw;
+  margin-inline: auto;
+  padding-inline: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Hero */
+.hero {
+  background: var(--bg);
+  min-height: 100vh;
+}
+.hero-mark {
+  display: grid;
+  place-items: center;
+  margin: 0;
+}
+.hero-mark-img {
+  height: 50vh;
+  aspect-ratio: 1 / 1;
+  width: auto;
+  max-width: 100%;
+  transform: translateX(48px);
+}
+.hero-titles {
+  display: flex;
+  justify-content: space-between;
+  gap: clamp(24px, 8vw, 72px);
+}
+.hero-title {
+  font-size: clamp(56px, 18vw, 200px);
+  line-height: 1;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+  flex: 1 1 0;
+}
+.hero-title:last-child { text-align: right; }
+.hero .container { 
+  min-height: 100vh;
+  padding-top: 64px;
+  padding-bottom: 72px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Mobile adjustments */
+@media (max-width: 700px) {
+  .container {
+    width: 100%;
+    padding-inline: 32px;
+  }
+  .hero {
+    min-height: auto;
+  }
+  .hero .container {
+    padding-top: 48px;
+    padding-bottom: 0px;
+    min-height: auto;
+    justify-content: flex-start;
+    gap: 32px;
+  }
+  .hero-titles {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0px;
+  }
+  .hero-title {
+    font-size: clamp(80px, 35vw, 160px);
+  }
+  .hero-title:last-child {
+    text-align: left;
+  }
+  .hero-mark-img {
+    height: 25vh;
+  }
+  .about-intro {
+    margin-bottom: 32px;
+  }
+  .about-avatars {
+    gap: 24px;
+  }
+}
+
+
+/* Work removed */
+
+/* About */
+.about { padding: 2.5rem 0; }
+.about-intro {
+  font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
+  line-height: 1.2;
+  margin: 0 0 72px 0;
+}
+.about-avatars {
+  display: flex;
+  align-items: center;
+  gap: 48px;
+}
+.avatar-item {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+}
+.avatar-name {
+  margin: 0;
+  font-size: 24px;
+  color: var(--text);
+}
+.avatar {
+  width: clamp(96px, 16vw, 180px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--border);
+}
+
+
+/* Contact removed */
+
+/* Footer removed */
+
+/* Buttons and links removed */
