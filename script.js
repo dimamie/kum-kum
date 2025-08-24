@@ -5,7 +5,7 @@
   document.addEventListener("click", (event) => {
     const target = event.target;
     if (!(target instanceof Element)) return;
-    const anchor = target.closest("a[href^="#"]");
+    const anchor = target.closest('a[href^="#"]');
     if (!anchor) return;
     const id = anchor.getAttribute("href");
     if (!id || id === "#") return;
@@ -20,4 +20,18 @@
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
+
+  // Project hover interactions
+  const projectNames = document.querySelectorAll('.project-name');
+  const projectPreview = document.querySelector('.project-preview');
+
+  projectNames.forEach(project => {
+    project.addEventListener('mouseenter', () => {
+      const imageSrc = project.getAttribute('data-image');
+      if (projectPreview && imageSrc) {
+        projectPreview.src = imageSrc;
+        projectPreview.alt = `${project.textContent} preview`;
+      }
+    });
+  });
 })();
