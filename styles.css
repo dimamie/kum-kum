@@ -321,4 +321,17 @@ img, svg { display: block; max-width: 100%; }
   .project-name {
     font-size: clamp(1.5rem, 6vw, 2.5rem);
   }
+  .projects-grid-content { 
+    grid-template-columns: 1fr; 
+    gap: 2rem; 
+  }
+  .project-grid-name { 
+    font-size: clamp(1.25rem, 5vw, 2rem); 
+  }
+  .project-column {
+    gap: 2rem;
+  }
+  .project-column:last-child .project-grid-item:first-child {
+    margin-top: 0;
+  }
 }
