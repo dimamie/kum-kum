@@ -515,6 +515,6 @@ img, svg { display: block; max-width: 100%; }
   }
   
   .projects-row .project-image {
-    height: 300px; /* Smaller height on mobile */
+    height: clamp(400px, 60vh, 500px); /* Bigger height on mobile */
   }
 }
