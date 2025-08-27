@@ -36,7 +36,7 @@ img, svg { display: block; max-width: 100%; }
 
 
 .container {
-  width: 85vw;
+  width: 70vw;
   margin-inline: auto;
   padding-inline: clamp(1rem, 3vw, 1.5rem);
 }
