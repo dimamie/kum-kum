@@ -135,6 +135,8 @@ img, svg { display: block; max-width: 100%; }
 }
 .hero-test .hero-title {
   font-size: clamp(60px, 20vw, 200px);
+  opacity: 0;
+  transform: translateX(-100px);
 }
 .hero-mark {
   width: 60%;
