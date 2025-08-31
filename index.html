@@ -7,7 +7,7 @@
   <meta name="description" content="studio">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css?v=3">
+  <link rel="stylesheet" href="styles.css?v=37">
 </head>
 <body>
   
@@ -54,7 +54,12 @@
       <div class="projects-row">
         <div class="project-item">
           <div class="project-image">
-            <img src="assets/Tshirt.png" alt="T-shirts" class="project-preview">
+            <img src="assets/Tshirt.png" 
+                 srcset="assets/Tshirt-mobile.png 768w, assets/Tshirt.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 alt="T-shirts" 
+                 class="project-preview"
+                 loading="lazy">
           </div>
           <div class="project-text">
             <h2 class="project-name">T-shirts</h2>
@@ -63,7 +68,11 @@
         </div>
         <div class="project-item">
           <div class="project-image">
-            <img src="assets/App.png" alt="Word app" class="project-preview">
+            <img src="assets/App.png" 
+                 srcset="assets/App-mobile.png 768w, assets/App.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 33vw"
+                 alt="Word app" 
+                 class="project-preview">
           </div>
           <div class="project-text">
             <h2 class="project-name">Word app</h2>
@@ -72,7 +81,11 @@
         </div>
         <div class="project-item">
           <div class="project-image">
-            <img src="assets/Calendar.png" alt="Project Three" class="project-preview">
+            <img src="assets/Calendar.png" 
+                 srcset="assets/Calendar-mobile.png 768w, assets/Calendar.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 33vw"
+                 alt="Calendar" 
+                 class="project-preview">
           </div>
           <div class="project-text">
             <h2 class="project-name">Calendar</h2>
@@ -93,6 +106,20 @@
     <section id="contact" class="contact">
       <div class="container">
         <a href="mailto:hello@example.com" class="contact-email">hello@example.com</a>
+        <div class="contact-location">
+          <svg class="pin-icon" width="19" height="25" viewBox="0 0 19 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g clip-path="url(#clip0_227_59)">
+              <path d="M18.5486 18.7692C18.5486 21.2891 14.7011 23.0555 9.28438 23.0555C3.85723 23.0555 0.00146484 21.2891 0.00146484 18.7692C0.00146484 16.6733 2.69076 15.1045 6.74395 14.6486V15.4159C6.74395 15.696 6.75122 15.9638 6.76822 16.2146C3.94979 16.5867 1.99442 17.5808 1.99442 18.7692C1.99442 20.3092 5.18142 21.4993 9.27402 21.4993C13.3584 21.4993 16.5557 20.2968 16.5557 18.7692C16.5557 17.5881 14.586 16.5869 11.7597 16.2137C11.7763 15.9631 11.7834 15.6957 11.7834 15.4159V14.6446C15.849 15.0951 18.5486 16.6671 18.5486 18.7692Z" fill="currentColor" fill-opacity="0.85"/>
+              <path d="M12.9403 5.29079C12.9403 7.00499 11.7675 8.45136 10.1714 8.85334V15.0246C10.1714 17.9174 9.66589 19.4712 9.27428 19.4712C8.87443 19.4712 8.36896 17.905 8.36896 15.0246V8.85334C6.77072 8.44101 5.61035 7.00499 5.61035 5.29079C5.61035 3.26378 7.23691 1.6123 9.27428 1.6123C11.3138 1.6123 12.9403 3.26378 12.9403 5.29079ZM6.971 4.22608C6.971 4.90662 7.55608 5.48958 8.22415 5.48958C8.91291 5.48958 9.47729 4.90662 9.47729 4.22608C9.47729 3.54767 8.91291 2.97295 8.22415 2.97295C7.55608 2.97295 6.971 3.54767 6.971 4.22608Z" fill="currentColor" fill-opacity="0.85"/>
+            </g>
+            <defs>
+              <clipPath id="clip0_227_59">
+                <rect width="18.5488" height="24.6682" fill="white"/>
+              </clipPath>
+            </defs>
+          </svg>
+          <span class="location-text">Warsaw • Praga Północ</span>
+        </div>
       </div>
     </section>
 

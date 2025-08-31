@@ -4,6 +4,7 @@
   --muted: #555560;
   --border: #e8e8ef;
   --underline: rgba(17, 17, 20, 0.1);
+  --icon-weak: #555560;
 }
 
 * { box-sizing: border-box; }
@@ -37,7 +38,8 @@ img, svg { display: block; max-width: 100%; }
 
 
 .container {
-  width: 65vw;
+  width: 70vw;
+  max-width: 1200px;
   margin-inline: auto;
   padding-inline: clamp(1rem, 3vw, 1.5rem);
 }
@@ -128,15 +130,43 @@ img, svg { display: block; max-width: 100%; }
 }
 .hero-test .container { 
   padding-top: clamp(32px, 4vw, 64px);
-  padding-bottom: clamp(16px, 2vw, 32px);
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
+.hero-test .hero-content {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex: 1;
+}
+.hero-test .hero-left {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.hero-test .hero-titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
 .hero-test .hero-title {
-  font-size: clamp(60px, 20vw, 200px);
+  font-size: clamp(60px, 15vw, 180px);
+  line-height: 0.8;
+  margin: 0;
+  font-weight: 400;
+  letter-spacing: -0.05em;
   opacity: 0;
-  transform: translateX(-100px);
+  transform: translateX(0);
+  max-width: 100%;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 .hero-mark {
   width: 60%;
@@ -151,7 +181,8 @@ img, svg { display: block; max-width: 100%; }
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(0.5rem, 1vw, 1rem);
   width: 100%;
-  margin-top: 2rem; /* Increase gap from previous section */
+  margin-top: 4rem; /* Larger gap from hero section on desktop */
+  margin-bottom: 48px; /* Gap to about section */
   padding-left: clamp(1rem, 3vw, 2rem); /* Left padding */
   padding-right: clamp(2rem, 5vw, 4rem); /* More right padding */
 }
@@ -166,8 +197,8 @@ img, svg { display: block; max-width: 100%; }
 .projects-row .project-item {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
-  height: 100%; /* Ensure all items have the same height */
+  gap: 0.5rem;
+  height: auto;
 }
 
 .projects-row .project-item:nth-child(2) {
@@ -192,6 +223,19 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 0; /* Override any inherited border-radius */
 }
 
+/* Mobile image switching */
+@media (max-width: 768px) {
+  .project-item:nth-child(1) .project-preview {
+    content: url('assets/Tshirt-mobile.png');
+  }
+  .project-item:nth-child(2) .project-preview {
+    content: url('assets/App-mobile.png');
+  }
+  .project-item:nth-child(3) .project-preview {
+    content: url('assets/Calendar-mobile.png');
+  }
+}
+
 .projects-row .project-item:hover .project-preview {
   transform: scale(1.05);
 }
@@ -206,7 +250,7 @@ img, svg { display: block; max-width: 100%; }
   gap: 0.25rem;
   align-items: center;
   text-align: center;
-  margin-top: clamp(0.25rem, 0.5vh, 0.5rem); /* Further reduced responsive top margin */
+  margin-top: 0.25rem;
 }
 
 .projects-row .project-name {
@@ -223,7 +267,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 /* About */
-.about { padding: 2.5rem 0; }
+.about { padding: 48px 0; }
 .about-intro {
   font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
   line-height: 1.2;
@@ -285,12 +329,13 @@ img, svg { display: block; max-width: 100%; }
 
 /* Contact */
 .contact {
-  padding: 4rem 0;
+  padding: 48px 0;
 }
 .contact .container {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 .contact-email {
   font-size: clamp(3rem, 6vw, 6rem);
@@ -300,14 +345,47 @@ img, svg { display: block; max-width: 100%; }
   border-bottom: 2px solid var(--underline);
   padding-bottom: 0.2em;
   transition: opacity 0.3s ease;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 .contact-email:hover {
   opacity: 0.7;
 }
 
+.contact-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.pin-icon {
+  color: var(--icon-weak);
+  width: 24px;
+  height: 32px;
+}
+
+.location-text {
+  color: var(--muted);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
 
 
 /* Mobile adjustments */
+@media (max-width: 700px) {
+  .hero-test .hero-title {
+    font-size: clamp(120px, 45vw, 200px);
+  }
+  
+  .projects-row {
+    margin-top: 3rem;
+  }
+}
+
 @media (max-width: 700px) {
   .container {
     width: 100%;
@@ -347,6 +425,9 @@ img, svg { display: block; max-width: 100%; }
   .projects-row {
     flex-direction: column;
     gap: 2rem;
+    margin-bottom: 48px;
+    padding-left: 0;
+    padding-right: 0;
   }
   
   .projects-row .project-item:first-child {
@@ -363,5 +444,27 @@ img, svg { display: block; max-width: 100%; }
   
   .projects-row .project-image {
     height: clamp(400px, 60vh, 500px); /* Bigger height on mobile */
+  }
+  
+  /* First project (Tshirt) - more square proportion */
+  .projects-row .project-item:first-child .project-image {
+    height: clamp(350px, 50vh, 450px);
+  }
+  
+  /* Other projects - more vertical proportion */
+  .projects-row .project-item:not(:first-child) .project-image {
+    height: clamp(400px, 60vh, 500px);
+  }
+  
+  /* Remove the slide-down effect on mobile */
+  .projects-row .project-item:nth-child(2) {
+    margin-top: 0;
+  }
+  
+  /* Mobile email responsive */
+  .contact-email {
+    font-size: clamp(2rem, 8vw, 3rem);
+    max-width: 100%;
+    text-align: center;
   }
 }
