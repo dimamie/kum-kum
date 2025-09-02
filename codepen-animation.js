@@ -3,6 +3,14 @@
 
 // Wait for DOM to be ready
 document.addEventListener('DOMContentLoaded', function() {
+  // Check if ScrollTrigger is available
+  if (typeof ScrollTrigger !== 'undefined') {
+    gsap.registerPlugin(ScrollTrigger);
+    console.log('✅ ScrollTrigger plugin registered');
+  } else {
+    console.log('❌ ScrollTrigger plugin not loaded');
+  }
+  
   // Get the hero titles
   const heroTitles = document.querySelectorAll('.hero-test .hero-title');
   
@@ -33,50 +41,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Location Marker Animation
-  const pinIcon = document.querySelector('.pin-icon');
-  const locationText = document.querySelector('.location-text');
+  // Scroll-triggered Location Marker Animation
+  console.log('🔍 Looking for location marker...');
   
-  if (pinIcon && locationText) {
-    // Set initial state
-    gsap.set([pinIcon, locationText], { opacity: 0, y: 20 });
+  // Target the whole location marker
+  const locationMarker = document.querySelector('.location-marker');
+  
+  console.log('📍 Location marker found:', locationMarker);
+  
+  if (locationMarker) {
+    console.log('✅ Location marker found - setting up animation...');
+    console.log('📍 Element details:', locationMarker.tagName, locationMarker.className);
     
-    // Create a timeline for the location animation
-    const locationTimeline = gsap.timeline({ delay: 1.5 }); // Start after hero titles
+    // Set up the 3pm rotation animation
+    console.log('🎬 Setting up 3pm rotation animation...');
     
-    // Animate pin icon with a bounce effect
-    locationTimeline.fromTo(pinIcon, {
-      opacity: 0,
-      y: 20,
-      scale: 0.8,
-      rotation: -15
-    }, {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      rotation: 0,
-      duration: 0.8,
-      ease: "back.out(1.7)"
-    });
-    
-    // Animate location text with a fade-in
-    locationTimeline.fromTo(locationText, {
-      opacity: 0,
-      y: 15
-    }, {
-      opacity: 1,
-      y: 0,
-      duration: 0.6,
-      ease: "power2.out"
-    }, "-=0.4"); // Start slightly before pin animation ends
-    
-    // Add a subtle floating animation to the pin icon
-    locationTimeline.to(pinIcon, {
-      y: -3,
-      duration: 2,
+    gsap.to(locationMarker, {
+      rotation: 90, // Rotate to 3pm position
+      duration: 3,
       ease: "power2.inOut",
       yoyo: true,
-      repeat: -1
-    }, "+=0.5");
+      repeat: -1,
+      onStart: () => console.log('🔄 3pm rotation animation started!')
+    });
+    
+    console.log('🎬 Animation setup complete!');
+  } else {
+    console.log('❌ Location marker not found');
   }
 });

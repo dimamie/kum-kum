@@ -357,23 +357,20 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.1rem;
+  gap: 0;
   margin-top: 2rem;
 }
 
-.pin-icon {
-  width: 48px;
-  height: 48px;
-  transform: translateY(-3px);
-  will-change: transform, opacity;
-  transform-origin: center;
+.location-marker {
+  width: 40px;
+  height: 40px;
 }
 
 .location-text {
   color: var(--muted);
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   font-weight: 400;
-  will-change: transform, opacity;
+  margin-left: -8px;
 }
 
 
