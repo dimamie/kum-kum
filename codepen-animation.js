@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
   
   // Get the hero titles
-  const heroTitles = document.querySelectorAll('.hero-test .hero-title');
+  const heroTitles = document.querySelectorAll('.hero .hero-title');
   
   // Create a staggered animation for each title
   heroTitles.forEach((title, index) => {
@@ -40,6 +40,34 @@ document.addEventListener('DOMContentLoaded', function() {
       delay: index * 0.5 // Stagger between titles
     });
   });
+
+  // Hero Right Animation - starts after hero titles
+  const heroRight = document.querySelector('.hero .hero-right');
+  if (heroRight) {
+    // Get the hero-right elements
+    const heroAvatars = heroRight.querySelector('.hero-avatars');
+    const heroServicesText = heroRight.querySelector('.hero-services-text');
+    const heroEmailLink = heroRight.querySelector('.hero-email-link');
+    
+    // Set initial state - hidden and below
+    gsap.set([heroAvatars, heroServicesText, heroEmailLink], {
+      opacity: 0,
+      y: 50
+    });
+    
+    // Calculate total duration of hero titles animation
+    const totalTitleDuration = heroTitles.length * 0.5 + 0.7; // delay + duration
+    
+    // Animate hero-right elements after titles complete
+    gsap.to([heroAvatars, heroServicesText, heroEmailLink], {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.2,
+      delay: totalTitleDuration + 0.05 // Start 0.05s after titles finish
+    });
+  }
 
   // Scroll-triggered Location Marker Animation
   console.log('🔍 Looking for location marker...');

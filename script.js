@@ -36,7 +36,7 @@
   });
 
   // GSAP Hero Animation
-  const heroTitles = document.querySelectorAll('.hero-test .hero-title');
+  const heroTitles = document.querySelectorAll('.hero .hero-title');
   
   // Animation Switcher - Change the number to switch animations
   const animationType = 3; // Change this number: 1, 2, 3, 4, or 5
