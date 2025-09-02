@@ -21,20 +21,7 @@ body {
 
 img, svg { display: block; max-width: 100%; }
 
-/* Header */
-.site-header {
-  height: 80px;
-  display: flex;
-  align-items: center;
-  padding-top: 40px;
-  display: none;
-}
-.header-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0rem;
-}
+
 
 
 .container {
@@ -223,6 +210,7 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1.2;
   margin: 0;
   font-weight: 400;
+  letter-spacing: -3%;
 }
 
 .projects-row .project-category {
@@ -238,6 +226,7 @@ img, svg { display: block; max-width: 100%; }
   line-height: 1.2;
   margin: 0 0 24px 0;
   max-width: 60vw;
+  letter-spacing: -3%;
 }
 .about-header {
   display: flex;
@@ -252,6 +241,7 @@ img, svg { display: block; max-width: 100%; }
   margin: 0;
   color: var(--text);
   text-transform: lowercase;
+  letter-spacing: -3%;
 }
 .about-header .hero-email {
   font-size: clamp(1.8rem, 2.5vw + 1rem, 3rem);
@@ -261,6 +251,7 @@ img, svg { display: block; max-width: 100%; }
   transition: opacity 0.3s ease;
   border-bottom: 2px solid var(--underline);
   padding-bottom: 0.2em;
+  letter-spacing: -3%;
 }
 .about-header .hero-email:hover {
   opacity: 0.7;
@@ -284,6 +275,7 @@ img, svg { display: block; max-width: 100%; }
   margin: 0;
   font-size: 24px;
   color: black;
+  letter-spacing: -3%;
 }
 .avatar {
   width: clamp(48px, 8vw, 80px);
@@ -313,6 +305,7 @@ img, svg { display: block; max-width: 100%; }
   word-wrap: break-word;
   overflow-wrap: break-word;
   hyphens: auto;
+  letter-spacing: -3%;
 }
 .contact-email:hover {
   opacity: 0.7;
@@ -322,20 +315,21 @@ img, svg { display: block; max-width: 100%; }
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0;
+  gap: 8px;
   margin-top: 2rem;
 }
 
 .location-marker {
-  width: 40px;
-  height: 40px;
+  width: 60px;
+  height: 60px;
+  margin-left: -16px;
 }
 
 .location-text {
   color: var(--muted);
-  font-size: 1.2rem;
+  font-size: 1.8rem;
   font-weight: 400;
-  margin-left: -8px;
+  letter-spacing: -3%;
 }
 
 

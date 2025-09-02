@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 
-  // Hero Right Animation - starts after hero titles
+  // Hero Right Animation - starts at the same time as hero titles
   const heroRight = document.querySelector('.hero .hero-right');
   if (heroRight) {
     // Get the hero-right elements
@@ -55,17 +55,45 @@ document.addEventListener('DOMContentLoaded', function() {
       y: 50
     });
     
-    // Calculate total duration of hero titles animation
-    const totalTitleDuration = heroTitles.length * 0.5 + 0.7; // delay + duration
-    
-    // Animate hero-right elements after titles complete
+    // Animate hero-right elements at the same time as titles
     gsap.to([heroAvatars, heroServicesText, heroEmailLink], {
       opacity: 1,
       y: 0,
       duration: 0.8,
       ease: "power2.out",
       stagger: 0.2,
-      delay: totalTitleDuration + 0.05 // Start 0.05s after titles finish
+      delay: 0 // Start immediately with titles
+    });
+  }
+
+  // Scroll-triggered Contact Section Animation - same as hero-right
+  const contactSection = document.querySelector('.contact');
+  if (contactSection) {
+    // Get the contact elements
+    const contactEmail = contactSection.querySelector('.contact-email');
+    const contactLocation = contactSection.querySelector('.contact-location');
+    
+    // Set initial state - hidden and below (same as hero-right)
+    gsap.set([contactEmail, contactLocation], {
+      opacity: 0,
+      y: 50
+    });
+    
+    // Animate contact elements when scrolled into view
+    gsap.to([contactEmail, contactLocation], {
+      opacity: 1,
+      y: 0,
+      duration: 0.8,
+      ease: "power2.out",
+      stagger: 0.2,
+      scrollTrigger: {
+        trigger: contactSection,
+        start: "top 80%", // Start when top of contact section is 80% up the viewport
+        onEnter: () => console.log('📧 Contact section entered viewport - starting animation!'),
+        onLeave: () => console.log('👋 Contact section left viewport'),
+        onEnterBack: () => console.log('📧 Contact section re-entered viewport'),
+        onLeaveBack: () => console.log('👋 Contact section left viewport (scrolling up)')
+      }
     });
   }
 
@@ -85,12 +113,13 @@ document.addEventListener('DOMContentLoaded', function() {
     console.log('🎬 Setting up 3pm rotation animation...');
     
     gsap.to(locationMarker, {
-      rotation: 90, // Rotate to 3pm position
+      rotation: 30, // Rotate to 30 degrees
       duration: 3,
       ease: "power2.inOut",
       yoyo: true,
-      repeat: -1,
-      onStart: () => console.log('🔄 3pm rotation animation started!')
+      repeat: 1, // Rotate 2 times (1 repeat = 2 total rotations)
+      onStart: () => console.log('🔄 30° rotation animation started!'),
+      onComplete: () => console.log('✅ Location marker animation completed!')
     });
     
     console.log('🎬 Animation setup complete!');
