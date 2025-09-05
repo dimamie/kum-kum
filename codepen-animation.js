@@ -47,16 +47,16 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the hero-right elements
     const heroAvatars = heroRight.querySelector('.hero-avatars');
     const heroServicesText = heroRight.querySelector('.hero-services-text');
-    const heroEmailLink = heroRight.querySelector('.hero-email-link');
+    const heroEmailLink = heroRight.querySelectorAll('.hero-email-link');
     
     // Set initial state - hidden and below
-    gsap.set([heroAvatars, heroServicesText, heroEmailLink], {
+    gsap.set([heroAvatars, heroServicesText, ...heroEmailLink], {
       opacity: 0,
       y: 50
     });
     
     // Animate hero-right elements at the same time as titles
-    gsap.to([heroAvatars, heroServicesText, heroEmailLink], {
+    gsap.to([heroAvatars, heroServicesText, ...heroEmailLink], {
       opacity: 1,
       y: 0,
       duration: 0.8,

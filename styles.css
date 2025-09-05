@@ -312,8 +312,8 @@ img, svg { display: block; max-width: 100%; }
 
 /* Slightly smaller inline icon in contact intro only */
 .contact-intro .inline-marker {
-  width: 0.9em;
-  height: 0.9em;
+  width: 1.1em;
+  height: 1.1em;
   margin: 0 -2px; /* tighten space on both sides of the icon */
 }
 .contact-email {
