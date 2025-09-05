@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Get the hero-right elements
     const heroAvatars = heroRight.querySelector('.hero-avatars');
     const heroServicesText = heroRight.querySelector('.hero-services-text');
-    const heroEmailLink = heroRight.querySelectorAll('.hero-email-link');
+    const heroEmailLink = heroRight.querySelectorAll('.hero-social-link');
     
     // Set initial state - hidden and below
     gsap.set([heroAvatars, heroServicesText, ...heroEmailLink], {
@@ -71,16 +71,16 @@ document.addEventListener('DOMContentLoaded', function() {
   if (contactSection) {
     // Get the contact elements
     const contactIntro = contactSection.querySelector('.contact-intro');
-    const contactEmail = contactSection.querySelector('.contact-email');
+    const contactEmails = contactSection.querySelectorAll('.contact-social');
     
     // Set initial state - hidden and below (same as hero-right)
-    gsap.set([contactIntro, contactEmail], {
+    gsap.set([contactIntro, ...contactEmails], {
       opacity: 0,
       y: 50
     });
     
     // Animate contact elements when scrolled into view
-    gsap.to([contactIntro, contactEmail], {
+    gsap.to([contactIntro, ...contactEmails], {
       opacity: 1,
       y: 0,
       duration: 0.8,
