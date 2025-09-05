@@ -70,17 +70,17 @@ document.addEventListener('DOMContentLoaded', function() {
   const contactSection = document.querySelector('.contact');
   if (contactSection) {
     // Get the contact elements
+    const contactIntro = contactSection.querySelector('.contact-intro');
     const contactEmail = contactSection.querySelector('.contact-email');
-    const contactLocation = contactSection.querySelector('.contact-location');
     
     // Set initial state - hidden and below (same as hero-right)
-    gsap.set([contactEmail, contactLocation], {
+    gsap.set([contactIntro, contactEmail], {
       opacity: 0,
       y: 50
     });
     
     // Animate contact elements when scrolled into view
-    gsap.to([contactEmail, contactLocation], {
+    gsap.to([contactIntro, contactEmail], {
       opacity: 1,
       y: 0,
       duration: 0.8,
@@ -95,35 +95,5 @@ document.addEventListener('DOMContentLoaded', function() {
         onLeaveBack: () => console.log('👋 Contact section left viewport (scrolling up)')
       }
     });
-  }
-
-  // Scroll-triggered Location Marker Animation
-  console.log('🔍 Looking for location marker...');
-  
-  // Target the whole location marker
-  const locationMarker = document.querySelector('.location-marker');
-  
-  console.log('📍 Location marker found:', locationMarker);
-  
-  if (locationMarker) {
-    console.log('✅ Location marker found - setting up animation...');
-    console.log('📍 Element details:', locationMarker.tagName, locationMarker.className);
-    
-    // Set up the 3pm rotation animation
-    console.log('🎬 Setting up 3pm rotation animation...');
-    
-    gsap.to(locationMarker, {
-      rotation: 30, // Rotate to 30 degrees
-      duration: 3,
-      ease: "power2.inOut",
-      yoyo: true,
-      repeat: 1, // Rotate 2 times (1 repeat = 2 total rotations)
-      onStart: () => console.log('🔄 30° rotation animation started!'),
-      onComplete: () => console.log('✅ Location marker animation completed!')
-    });
-    
-    console.log('🎬 Animation setup complete!');
-  } else {
-    console.log('❌ Location marker not found');
   }
 });

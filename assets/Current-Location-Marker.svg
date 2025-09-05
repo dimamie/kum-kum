@@ -1,20 +1,20 @@
-<svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M10.6072 2.14393C6.35911 5.1261 3.27697 9.65539 1.91129 14.9228L22.7925 21.6413L10.6072 2.14393Z" fill="url(#paint0_radial_104_268)"/>
-<g filter="url(#filter0_d_104_268)">
-<circle cx="20" cy="20" r="5" fill="#6393F2"/>
-<circle cx="20" cy="20" r="6" stroke="white" stroke-width="2"/>
+<svg width="21" height="23" viewBox="0 0 21 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M21 7.15718C19.7579 4.25248 17.5443 1.89293 14.7545 0.5L9 12.5L21 7.15718Z" fill="url(#paint0_radial_128_7)"/>
+<g filter="url(#filter0_d_128_7)">
+<circle cx="9.75195" cy="11.752" r="3.75" fill="#6393F2"/>
+<circle cx="9.75195" cy="11.752" r="4.71875" stroke="white" stroke-width="1.9375"/>
 </g>
 <defs>
-<filter id="filter0_d_104_268" x="7" y="8" width="26" height="26" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<filter id="filter0_d_128_7" x="0.0644531" y="3.0332" width="19.375" height="19.375" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
 <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-<feOffset dy="1"/>
-<feGaussianBlur stdDeviation="3"/>
+<feOffset dy="0.96875"/>
+<feGaussianBlur stdDeviation="2"/>
 <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.15 0"/>
-<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_104_268"/>
-<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_104_268" result="shape"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_128_7"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_128_7" result="shape"/>
 </filter>
-<radialGradient id="paint0_radial_104_268" cx="0" cy="0" r="1" gradientTransform="matrix(16.4313 -14.6746 14.1131 17.9677 22.7924 21.6411)" gradientUnits="userSpaceOnUse">
+<radialGradient id="paint0_radial_128_7" cx="0" cy="0" r="1" gradientTransform="matrix(6.5463 11.5698 -11.3385 6.6798 9.00009 12.5)" gradientUnits="userSpaceOnUse">
 <stop stop-color="#C7D5F2"/>
 <stop offset="1" stop-color="#3478F6" stop-opacity="0"/>
 </radialGradient>
