@@ -319,6 +319,24 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   gap: 8px;
 }
+.spotify-widget .spotify-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+}
+.spotify-widget .spotify-artist {
+  color: var(--text);
+}
+.spotify-widget .spotify-track {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--underline);
+  width: fit-content;
+  transition: opacity 0.3s ease;
+}
+.spotify-widget .spotify-track:hover {
+  opacity: 0.7;
+}
 .spotify-widget .spotify-art {
   border-radius: 6px;
   object-fit: cover;

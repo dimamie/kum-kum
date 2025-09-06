@@ -82,7 +82,11 @@
           : '';
         var url = (data.item.external_urls && data.item.external_urls.spotify) ? data.item.external_urls.spotify : '#';
         var artImg = art ? '<img class="spotify-art" src="' + art + '" alt="album art" width="40" height="40" loading="lazy" />' : '';
-        spotifyEl.innerHTML = artImg + '<span>listening to <a href="' + url + '" target="_blank" rel="noopener">' + track + '</a> — ' + artists + '</span>';
+        var info = '<div class="spotify-info">'
+          + '<span class="spotify-artist">' + artists + '</span>'
+          + '<a class="spotify-track" href="' + url + '" target="_blank" rel="noopener">' + track + '</a>'
+          + '</div>';
+        spotifyEl.innerHTML = artImg + info;
       })
       .catch(function(){});
   }
