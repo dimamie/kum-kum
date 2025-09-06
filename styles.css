@@ -308,6 +308,12 @@ img, svg { display: block; max-width: 100%; }
   justify-content: flex-start;
   align-items: flex-start;
 }
+.spotify-widget {
+  margin-top: 16px;
+  font-size: 14px;
+  color: var(--muted);
+  letter-spacing: -3%;
+}
 .contact-intro {
   font-size: clamp(1.25rem, 1.6vw + 0.6rem, 2rem);
   line-height: 1.2;
