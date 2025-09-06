@@ -1,0 +1,23 @@
+{
+  "name": "designer-portfolio",
+  "version": "1.0.0",
+  "description": "A clean, responsive single-page portfolio for designers.",
+  "main": "codepen-animation.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dimamie/kum-kum.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dimamie/kum-kum/issues"
+  },
+  "homepage": "https://github.com/dimamie/kum-kum#readme",
+  "dependencies": {
+    "@vercel/analytics": "^1.5.0"
+  }
+}
