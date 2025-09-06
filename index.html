@@ -6,20 +6,13 @@
   <title>kum-kum</title>
   <meta name="description" content="studio">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=103">
 </head>
 <body>
   
-  <header class="site-header">
-    <div class="container">
-      <div class="header-content">
-        <p class="hero-services">design services</p>
-        <a href="mailto:hello@example.com" class="hero-email">hello@example.com</a>
-      </div>
-    </div>
-  </header>
-
   <main id="top">
     <section class="hero">
       <div class="container">
@@ -30,8 +23,56 @@
               <h1 class="hero-title">Кум</h1>
             </div>
           </div>
-          <div class="hero-mark">
-            <img src="assets/logo.svg" alt="Logo" class="hero-mark-img">
+          <div class="hero-right">
+            <img src="assets/People.png" alt="People avatars" class="hero-avatars">
+            <p class="hero-services-text">design services</p>
+            <a href="https://instagram.com/eveuvuer" target="_blank" rel="noopener" class="hero-social-link">@eveuvuer</a>
+            <a href="https://instagram.com/blessificator" target="_blank" rel="noopener" class="hero-social-link">@blessificator</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects-grid">
+      <div class="projects-row">
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/Tshirt.png" 
+                 srcset="assets/Tshirt-mobile.png 768w, assets/Tshirt.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 50vw"
+                 alt="T-shirts" 
+                 class="project-preview"
+                 loading="lazy">
+          </div>
+          <div class="project-text">
+            <h2 class="project-name">T-shirts</h2>
+            <span class="project-category">2023—2025</span>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/App.png" 
+                 srcset="assets/App-mobile.png 768w, assets/App.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 33vw"
+                 alt="Word app" 
+                 class="project-preview">
+          </div>
+          <div class="project-text">
+            <h2 class="project-name">Word app</h2>
+            <span class="project-category">2025</span>
+          </div>
+        </div>
+        <div class="project-item">
+          <div class="project-image">
+            <img src="assets/Calendar.png" 
+                 srcset="assets/Calendar-mobile.png 768w, assets/Calendar.png 1200w"
+                 sizes="(max-width: 768px) 100vw, 33vw"
+                 alt="Calendar" 
+                 class="project-preview">
+          </div>
+          <div class="project-text">
+            <h2 class="project-name">Calendar</h2>
+            <span class="project-category">2024</span>
           </div>
         </div>
       </div>
@@ -45,49 +86,19 @@
       </div>
     </section>
 
-
-
-
-
-
-
-    <section id="projects" class="projects-grid">
-      <div class="projects-row">
-        <div class="project-item">
-          <div class="project-image">
-            <img src="assets/Tshirt.png" alt="T-shirts" class="project-preview">
-          </div>
-          <div class="project-text">
-            <h2 class="project-name">T-shirts</h2>
-            <span class="project-category">2023—2025</span>
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-image">
-            <img src="assets/App.png" alt="Word app" class="project-preview">
-          </div>
-          <div class="project-text">
-            <h2 class="project-name">Word app</h2>
-            <span class="project-category">2025</span>
-          </div>
-        </div>
-        <div class="project-item">
-          <div class="project-image">
-            <img src="assets/Calendar.png" alt="Project Three" class="project-preview">
-          </div>
-          <div class="project-text">
-            <h2 class="project-name">Calendar</h2>
-            <span class="project-category">2024</span>
-          </div>
-        </div>
+    <section id="contact" class="contact">
+      <div class="container">
+        <p class="contact-intro">Based in <img src="assets/Current-Location-Marker.png" alt="Location" class="inline-marker"> Warsaw</p>
+        <a href="https://instagram.com/eveuvuer" target="_blank" rel="noopener" class="contact-social">@eveuvuer</a>
+        <a href="https://instagram.com/blessificator" target="_blank" rel="noopener" class="contact-social">@blessificator</a>
       </div>
     </section>
 
-
-
-
   </main>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
   <script src="script.js" defer></script>
+  <script src="codepen-animation.js?v=34" defer></script>
 </body>
 </html>

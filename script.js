@@ -34,4 +34,37 @@
       }
     });
   });
+
+  // GSAP Hero Animation
+  const heroTitles = document.querySelectorAll('.hero .hero-title');
+  
+  // Animation Switcher - Change the number to switch animations
+  const animationType = 3; // Change this number: 1, 2, 3, 4, or 5
+
+  const animations = {
+    1: {
+      from: { opacity: 0, x: -100 },
+      to: { opacity: 1, x: 0, duration: 1.4, ease: "power3.out", stagger: 0.25 }
+    },
+    2: {
+      from: { opacity: 0, scale: 0.5 },
+      to: { opacity: 1, scale: 1, duration: 1.6, ease: "power2.out", stagger: 0.3 }
+    },
+    3: {
+      from: { opacity: 0, y: 100 },
+      to: { opacity: 1, y: 0, duration: 1.2, ease: "power2.out", stagger: 0.2 }
+    },
+    4: {
+      from: { opacity: 0, y: -200 },
+      to: { opacity: 1, y: 0, duration: 1.4, ease: "power2.out", stagger: 0.25 }
+    },
+    5: {
+      from: { opacity: 0, rotation: 180, scale: 0 },
+      to: { opacity: 1, rotation: 0, scale: 1, duration: 1.8, ease: "power2.out", stagger: 0.3 }
+    }
+  };
+
+  // Apply the selected animation
+  const selectedAnimation = animations[animationType];
+  gsap.fromTo(heroTitles, selectedAnimation.from, selectedAnimation.to);
 })();
