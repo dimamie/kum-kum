@@ -459,6 +459,10 @@ img, svg { display: block; max-width: 100%; }
   .hero .hero-social-link {
     line-height: 1;
   }
+  /* Increase gap between Instagram tags on mobile */
+  .hero .hero-social-link + .hero-social-link {
+    margin-top: 8px;
+  }
   .hero-mark-img {
     height: 25vh;
   }
