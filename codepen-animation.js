@@ -62,7 +62,11 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 0.8,
       ease: "power2.out",
       stagger: 0.2,
-      delay: 0 // Start immediately with titles
+      delay: 0, // Start immediately with titles
+      onComplete: () => {
+        // Clear inline styles so CSS :hover can control opacity
+        gsap.set([heroAvatars, heroServicesText, ...heroEmailLink], { clearProps: "opacity,transform" });
+      }
     });
   }
 
@@ -86,6 +90,10 @@ document.addEventListener('DOMContentLoaded', function() {
       duration: 0.8,
       ease: "power2.out",
       stagger: 0.2,
+      onComplete: () => {
+        // Clear inline styles so CSS :hover can control opacity
+        gsap.set([contactIntro, ...contactEmails], { clearProps: "opacity,transform" });
+      },
       scrollTrigger: {
         trigger: contactSection,
         start: "top 80%", // Start when top of contact section is 80% up the viewport

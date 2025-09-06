@@ -89,6 +89,11 @@ img, svg { display: block; max-width: 100%; }
   gap: 0;
 }
 
+/* Desktop: social links snug (old spacing) */
+.hero .hero-social-link + .hero-social-link {
+  margin-top: 0;
+}
+
 .hero .hero-avatars {
   width: auto;
   height: 48px;
