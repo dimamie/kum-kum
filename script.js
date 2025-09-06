@@ -77,8 +77,12 @@
         if (!data || !data.item) return;
         var track = data.item.name;
         var artists = (data.item.artists || []).map(function(a){ return a.name; }).join(', ');
+        var art = (data.item.album && Array.isArray(data.item.album.images) && data.item.album.images.length)
+          ? data.item.album.images[0].url
+          : '';
         var url = (data.item.external_urls && data.item.external_urls.spotify) ? data.item.external_urls.spotify : '#';
-        spotifyEl.innerHTML = 'listening to <a href="' + url + '" target="_blank" rel="noopener">' + track + '</a> — ' + artists;
+        var artImg = art ? '<img class="spotify-art" src="' + art + '" alt="album art" width="40" height="40" loading="lazy" />' : '';
+        spotifyEl.innerHTML = artImg + '<span>listening to <a href="' + url + '" target="_blank" rel="noopener">' + track + '</a> — ' + artists + '</span>';
       })
       .catch(function(){});
   }
