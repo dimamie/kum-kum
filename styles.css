@@ -110,7 +110,7 @@ img, svg { display: block; max-width: 100%; }
 }
 
 .hero .hero-social-link {
-  font-size: 24px;
+  font-size: 20px;
   color: var(--text);
   text-decoration: none;
   transition: opacity 0.3s ease;
