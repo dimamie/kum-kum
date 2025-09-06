@@ -309,7 +309,7 @@ img, svg { display: block; max-width: 100%; }
   align-items: flex-start;
 }
 .spotify-widget {
-  margin-top: 16px;
+  margin-top: 24px;
   font-size: 14px;
   color: var(--muted);
   letter-spacing: -3%;
@@ -338,6 +338,8 @@ img, svg { display: block; max-width: 100%; }
   opacity: 0.7;
 }
 .spotify-widget .spotify-art {
+  width: 32px;
+  height: 32px;
   border-radius: 6px;
   object-fit: cover;
 }
