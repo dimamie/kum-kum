@@ -93,6 +93,13 @@ img, svg { display: block; max-width: 100%; }
   margin-top: 0;
 }
 
+@media (min-width: 701px) {
+  /* Desktop spacing between hero social links */
+  .hero .hero-social-link + .hero-social-link {
+    margin-top: 4px;
+  }
+}
+
 .hero .hero-avatars {
   width: auto;
   height: 48px;
