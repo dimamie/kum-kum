@@ -522,6 +522,6 @@ img, svg { display: block; max-width: 100%; }
   }
   /* Reduce gap between contact and Spotify on mobile */
   .spotify-widget {
-    margin-top: 8px;
+    margin-top: 16px;
   }
 }
