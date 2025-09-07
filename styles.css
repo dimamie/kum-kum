@@ -199,7 +199,7 @@ img, svg { display: block; max-width: 100%; }
   opacity: 0;
   width: 120px;
   height: 36px;
-  background-image: url('assets/comingsoon.svg');
+  background-image: url('assets/ComingSoon.svg');
   background-repeat: no-repeat;
   background-size: contain;
   background-position: center;
