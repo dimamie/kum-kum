@@ -195,7 +195,7 @@ img, svg { display: block; max-width: 100%; }
   position: absolute;
   left: 50%;
   top: 50%;
-  transform: translate(-50%, -50%) scale(0.95);
+  transform: translate(-50%, -50%) scale(0.95) rotate(-6deg);
   opacity: 0;
   width: 320px;
   height: 96px;
@@ -205,6 +205,8 @@ img, svg { display: block; max-width: 100%; }
   background-position: center;
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
+  transform-origin: center center;
+  will-change: opacity, transform;
 }
 
 /* Mobile image switching */
@@ -228,7 +230,19 @@ img, svg { display: block; max-width: 100%; }
 /* Show badge on hover */
 .projects-row .project-item:hover .project-image::after {
   opacity: 1;
-  transform: translate(-50%, -50%) scale(1);
+  transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  animation: comingSoonIn 180ms ease-out 1 both;
+}
+
+@keyframes comingSoonIn {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.9) rotate(-8deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
 }
 
 .projects-row .project-text {
