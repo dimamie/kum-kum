@@ -197,8 +197,8 @@ img, svg { display: block; max-width: 100%; }
   top: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   opacity: 0;
-  width: 240px;
-  height: 72px;
+  width: 320px;
+  height: 96px;
   background-image: url('assets/ComingSoon.svg');
   background-repeat: no-repeat;
   background-size: contain;
