@@ -457,7 +457,7 @@ img, svg { display: block; max-width: 100%; }
   /* Mobile hero-right text styling - same as desktop */
   .hero .hero-services-text {
     line-height: 1.7;
-    margin-bottom: 8px;
+    margin: 4px 0;
   }
   
   .hero .hero-social-link {
