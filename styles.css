@@ -109,7 +109,7 @@ img, svg { display: block; max-width: 100%; }
 
 .hero .hero-services-text {
   font-size: 24px;
-  color: var(--muted);
+  color: var(--text);
   margin: 0 0 0 0;
   text-transform: lowercase;
   text-align: left;
