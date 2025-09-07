@@ -191,20 +191,18 @@ img, svg { display: block; max-width: 100%; }
 
 /* Centered "soon" badge overlay (hidden by default) */
 .projects-row .project-image::after {
-  content: "soon";
+  content: "";
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) scale(0.95);
   opacity: 0;
-  background: var(--border);
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  padding: 6px 10px;
-  border-radius: 9999px;
-  border: 1px solid var(--underline);
+  width: 120px;
+  height: 36px;
+  background-image: url('assets/comingsoon.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
   transition: opacity 0.25s ease, transform 0.25s ease;
   pointer-events: none;
 }
