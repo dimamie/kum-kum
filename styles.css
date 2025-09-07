@@ -520,4 +520,8 @@ img, svg { display: block; max-width: 100%; }
     max-width: 100%;
     text-align: center;
   }
+  /* Reduce gap between contact and Spotify on mobile */
+  .spotify-widget {
+    margin-top: 24px;
+  }
 }
