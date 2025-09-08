@@ -391,7 +391,7 @@ img, svg { display: block; max-width: 100%; }
   margin: 0 0 8px 0; /* tighter gap above email */
   max-width: 60vw;
   letter-spacing: -0.03em;
-  color: var(--muted);
+  color: var(--text);
 }
 
 /* Slightly smaller inline icon in contact intro only */
