@@ -90,4 +90,49 @@
       })
       .catch(function(){});
   }
+
+  // Calendar project animation
+  const calendarProject = document.querySelector('[data-project="calendar"]');
+  if (calendarProject) {
+    const calendarImage = calendarProject.querySelector('.project-preview');
+    const calendarImages = [
+      'assets/Calendar/Calendar.png',
+      'assets/Calendar/Calendar-1.png',
+      'assets/Calendar/Calendar-2.png',
+      'assets/Calendar/Calendar-3.png',
+      'assets/Calendar/Calendar-4.png'
+    ];
+    const originalImage = 'assets/Calendar.png'; // Original static image
+    let currentFrame = 0;
+    let animationInterval = null;
+    const frameDelay = 300; // milliseconds between frames
+
+    // Preload images
+    calendarImages.forEach(function(src) {
+      const img = new Image();
+      img.src = src;
+    });
+
+    // Start animation on hover
+    calendarProject.addEventListener('mouseenter', function() {
+      currentFrame = 0;
+      calendarImage.src = calendarImages[0];
+      
+      animationInterval = setInterval(function() {
+        currentFrame = (currentFrame + 1) % calendarImages.length;
+        calendarImage.src = calendarImages[currentFrame];
+      }, frameDelay);
+    });
+
+    // Stop animation and reset on mouse leave
+    calendarProject.addEventListener('mouseleave', function() {
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+      // Reset to original image
+      calendarImage.src = originalImage;
+      currentFrame = 0;
+    });
+  }
 })();
