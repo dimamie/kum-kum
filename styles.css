@@ -198,6 +198,11 @@ main {
   border-radius: 0;
 }
 
+/* Override content property when animating (prevents CSS from interfering) */
+.project-item.is-animating .project-preview {
+  content: none !important;
+}
+
 
 /* Mobile image switching */
 @media (max-width: 768px) {
@@ -209,6 +214,10 @@ main {
   }
   .project-item:nth-child(3) .project-preview {
     content: url('assets/Calendar-mobile.png');
+  }
+  /* Override content property when animating */
+  .project-item.is-animating .project-preview {
+    content: none !important;
   }
 }
 

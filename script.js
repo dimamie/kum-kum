@@ -102,7 +102,9 @@
       'assets/Calendar/Calendar-3.png',
       'assets/Calendar/Calendar-4.png'
     ];
-    const originalImage = 'assets/Calendar.png'; // Original static image
+    const originalSrc = calendarImage.getAttribute('src') || 'assets/Calendar.png';
+    const originalSrcset = calendarImage.getAttribute('srcset');
+    const originalSizes = calendarImage.getAttribute('sizes');
     let currentFrame = 0;
     let animationInterval = null;
     const frameDelay = 300; // milliseconds between frames
@@ -115,9 +117,24 @@
 
     // Start animation on hover
     calendarProject.addEventListener('mouseenter', function() {
+      // Clear any existing interval
+      if (animationInterval) {
+        clearInterval(animationInterval);
+        animationInterval = null;
+      }
+      
+      // Add class to prevent CSS content property from interfering
+      calendarProject.classList.add('is-animating');
+      
+      // Remove srcset and sizes to prevent conflicts
+      calendarImage.removeAttribute('srcset');
+      calendarImage.removeAttribute('sizes');
+      
       currentFrame = 0;
+      // Set first frame immediately
       calendarImage.src = calendarImages[0];
       
+      // Start animation
       animationInterval = setInterval(function() {
         currentFrame = (currentFrame + 1) % calendarImages.length;
         calendarImage.src = calendarImages[currentFrame];
@@ -130,8 +147,18 @@
         clearInterval(animationInterval);
         animationInterval = null;
       }
+      // Remove animation class
+      calendarProject.classList.remove('is-animating');
+      
+      // Restore srcset and sizes
+      if (originalSrcset) {
+        calendarImage.setAttribute('srcset', originalSrcset);
+      }
+      if (originalSizes) {
+        calendarImage.setAttribute('sizes', originalSizes);
+      }
       // Reset to original image
-      calendarImage.src = originalImage;
+      calendarImage.src = originalSrc;
       currentFrame = 0;
     });
   }
