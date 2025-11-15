@@ -193,7 +193,7 @@ img, svg { display: block; max-width: 100%; }
 /* Mobile image switching */
 @media (max-width: 768px) {
   .project-item:nth-child(1) .project-preview {
-    content: url('assets/FuckYourLocals.png');
+    content: url('assets/FuckYourLocals.png?v=2');
   }
   .project-item:nth-child(2) .project-preview {
     content: url('assets/App-mobile.png');
