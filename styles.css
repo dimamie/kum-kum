@@ -189,25 +189,6 @@ img, svg { display: block; max-width: 100%; }
   border-radius: 0;
 }
 
-/* Centered "soon" badge overlay (hidden by default) */
-.projects-row .project-image::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) scale(0.95) rotate(-6deg);
-  opacity: 0;
-  width: 420px;
-  height: 126px;
-  background-image: url('assets/ComingSoon.svg');
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-position: center;
-  transition: opacity 0.25s ease, transform 0.25s ease;
-  pointer-events: none;
-  transform-origin: center center;
-  will-change: opacity, transform;
-}
 
 /* Mobile image switching */
 @media (max-width: 768px) {
@@ -222,28 +203,6 @@ img, svg { display: block; max-width: 100%; }
   }
 }
 
-.projects-row .project-item:hover .project-preview {
-  transform: scale(1.05);
-  opacity: 0.35;
-}
-
-/* Show badge on hover */
-.projects-row .project-item:hover .project-image::after {
-  opacity: 1;
-  transform: translate(-50%, -50%) scale(1) rotate(0deg);
-  animation: comingSoonIn 180ms ease-out 1 both;
-}
-
-@keyframes comingSoonIn {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.9) rotate(-8deg);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1) rotate(0deg);
-  }
-}
 
 .projects-row .project-text {
   display: flex;
@@ -252,6 +211,15 @@ img, svg { display: block; max-width: 100%; }
   align-items: center;
   text-align: center;
   margin-top: 0.25rem;
+}
+
+.projects-row .project-badge {
+  font-size: 11px;
+  color: var(--muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
 }
 
 .projects-row .project-name {
