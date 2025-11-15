@@ -141,7 +141,7 @@
       }, frameDelay);
     });
 
-    // Stop animation and reset on mouse leave
+    // Stop animation on mouse leave (keep last frame visible)
     calendarProject.addEventListener('mouseleave', function() {
       if (animationInterval) {
         clearInterval(animationInterval);
@@ -157,9 +157,7 @@
       if (originalSizes) {
         calendarImage.setAttribute('sizes', originalSizes);
       }
-      // Reset to original image
-      calendarImage.src = originalSrc;
-      currentFrame = 0;
+      // Keep the current frame visible (don't reset to original)
     });
   }
 })();
