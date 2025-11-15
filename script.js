@@ -94,6 +94,7 @@
   // Calendar project animation
   const calendarProject = document.querySelector('[data-project="calendar"]');
   if (calendarProject) {
+    const calendarImageContainer = calendarProject.querySelector('.project-image');
     const calendarImage = calendarProject.querySelector('.project-preview');
     const calendarImages = [
       'assets/Calendar/Calendar.png',
@@ -115,8 +116,8 @@
       img.src = src;
     });
 
-    // Start animation on hover
-    calendarProject.addEventListener('mouseenter', function() {
+    // Start animation on hover (only on the image container, not the whole project item)
+    calendarImageContainer.addEventListener('mouseenter', function() {
       // Clear any existing interval
       if (animationInterval) {
         clearInterval(animationInterval);
@@ -141,8 +142,8 @@
       }, frameDelay);
     });
 
-    // Stop animation and reset on mouse leave
-    calendarProject.addEventListener('mouseleave', function() {
+    // Stop animation and reset on mouse leave (from image container)
+    calendarImageContainer.addEventListener('mouseleave', function() {
       if (animationInterval) {
         clearInterval(animationInterval);
         animationInterval = null;
