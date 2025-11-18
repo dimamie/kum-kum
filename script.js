@@ -91,7 +91,8 @@
       .catch(function(){});
   }
 
-  // Calendar project animation
+  // Calendar project animation - DISABLED
+  /*
   const calendarProject = document.querySelector('[data-project="calendar"]');
   if (calendarProject) {
     const calendarImageContainer = calendarProject.querySelector('.project-image');
@@ -163,4 +164,5 @@
       currentFrame = 0;
     });
   }
+  */
 })();
