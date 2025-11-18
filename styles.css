@@ -207,7 +207,7 @@ main {
 /* Mobile image switching */
 @media (max-width: 768px) {
   .project-item:nth-child(1) .project-preview {
-    content: url('assets/FuckYourLocals.png?v=2');
+    content: url('assets/Thankyoutshirt.png');
   }
   .project-item:nth-child(2) .project-preview {
     content: url('assets/App-mobile.png');
