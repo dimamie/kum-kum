@@ -72,36 +72,42 @@ document.addEventListener('DOMContentLoaded', function() {
 
   // Scroll-triggered Contact Section Animation - same as hero-right
   const contactSection = document.querySelector('.contact');
+  const canAnimateContact = typeof ScrollTrigger !== 'undefined' && window.matchMedia('(min-width: 701px)').matches;
   if (contactSection) {
-    // Get the contact elements
     const contactIntro = contactSection.querySelector('.contact-intro');
     const contactEmails = contactSection.querySelectorAll('.contact-social');
-    
-    // Set initial state - hidden and below (same as hero-right)
-    gsap.set([contactIntro, ...contactEmails], {
-      opacity: 0,
-      y: 50
-    });
-    
-    // Animate contact elements when scrolled into view
-    gsap.to([contactIntro, ...contactEmails], {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      ease: "power2.out",
-      stagger: 0.2,
-      onComplete: () => {
-        // Clear inline styles so CSS :hover can control opacity
-        gsap.set([contactIntro, ...contactEmails], { clearProps: "opacity,transform" });
-      },
-      scrollTrigger: {
-        trigger: contactSection,
-        start: "top 80%", // Start when top of contact section is 80% up the viewport
-        onEnter: () => console.log('📧 Contact section entered viewport - starting animation!'),
-        onLeave: () => console.log('👋 Contact section left viewport'),
-        onEnterBack: () => console.log('📧 Contact section re-entered viewport'),
-        onLeaveBack: () => console.log('👋 Contact section left viewport (scrolling up)')
-      }
-    });
+    const contactElements = [contactIntro, ...contactEmails].filter(Boolean);
+
+    if (canAnimateContact) {
+      // Set initial state - hidden and below (same as hero-right)
+      gsap.set(contactElements, {
+        opacity: 0,
+        y: 50
+      });
+      
+      // Animate contact elements when scrolled into view
+      gsap.to(contactElements, {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: "power2.out",
+        stagger: 0.2,
+        onComplete: () => {
+          // Clear inline styles so CSS :hover can control opacity
+          gsap.set(contactElements, { clearProps: "opacity,transform" });
+        },
+        scrollTrigger: {
+          trigger: contactSection,
+          start: "top 80%", // Start when top of contact section is 80% up the viewport
+          onEnter: () => console.log('📧 Contact section entered viewport - starting animation!'),
+          onLeave: () => console.log('👋 Contact section left viewport'),
+          onEnterBack: () => console.log('📧 Contact section re-entered viewport'),
+          onLeaveBack: () => console.log('👋 Contact section left viewport (scrolling up)')
+        }
+      });
+    } else {
+      // Ensure elements stay visible if animation is disabled (e.g., on mobile)
+      gsap.set(contactElements, { clearProps: "opacity,transform" });
+    }
   }
 });
