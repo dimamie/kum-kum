@@ -175,6 +175,12 @@ main {
   height: auto;
 }
 
+.projects-row .project-item.project-link {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .projects-row .project-item:nth-child(2) {
   margin-top: 5rem;
 }
